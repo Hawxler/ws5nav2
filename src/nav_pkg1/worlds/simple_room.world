@@ -1,0 +1,288 @@
+<?xml version="1.0"?>
+
+<sdf version="1.6">
+
+  <world name="simple_room">
+
+
+    <!-- =================================================== -->
+    <!-- Physics -->
+    <!-- =================================================== -->
+
+    <physics
+        name="default_physics"
+        type="ode">
+
+      <max_step_size>
+        0.001
+      </max_step_size>
+
+      <real_time_update_rate>
+        1000
+      </real_time_update_rate>
+
+    </physics>
+
+
+    <!-- =================================================== -->
+    <!-- Sun -->
+    <!-- =================================================== -->
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+
+    <!-- =================================================== -->
+    <!-- Ground -->
+    <!-- =================================================== -->
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+
+    <!-- =================================================== -->
+    <!-- Room Walls -->
+    <!-- =================================================== -->
+
+    <model name="room_walls">
+
+      <static>true</static>
+
+
+      <!-- North wall -->
+
+      <link name="north_wall">
+
+        <pose>
+          0 3.0 0.25 0 0 0
+        </pose>
+
+        <collision name="collision">
+
+          <geometry>
+
+            <box>
+              <size>6.0 0.10 0.50</size>
+            </box>
+
+          </geometry>
+
+        </collision>
+
+        <visual name="visual">
+
+          <geometry>
+
+            <box>
+              <size>6.0 0.10 0.50</size>
+            </box>
+
+          </geometry>
+
+        </visual>
+
+      </link>
+
+
+      <!-- South wall -->
+
+      <link name="south_wall">
+
+        <pose>
+          0 -3.0 0.25 0 0 0
+        </pose>
+
+        <collision name="collision">
+
+          <geometry>
+
+            <box>
+              <size>6.0 0.10 0.50</size>
+            </box>
+
+          </geometry>
+
+        </collision>
+
+        <visual name="visual">
+
+          <geometry>
+
+            <box>
+              <size>6.0 0.10 0.50</size>
+            </box>
+
+          </geometry>
+
+        </visual>
+
+      </link>
+
+
+      <!-- East wall -->
+
+      <link name="east_wall">
+
+        <pose>
+          3.0 0 0.25 0 0 0
+        </pose>
+
+        <collision name="collision">
+
+          <geometry>
+
+            <box>
+              <size>0.10 6.0 0.50</size>
+            </box>
+
+          </geometry>
+
+        </collision>
+
+        <visual name="visual">
+
+          <geometry>
+
+            <box>
+              <size>0.10 6.0 0.50</size>
+            </box>
+
+          </geometry>
+
+        </visual>
+
+      </link>
+
+
+      <!-- West wall -->
+
+      <link name="west_wall">
+
+        <pose>
+          -3.0 0 0.25 0 0 0
+        </pose>
+
+        <collision name="collision">
+
+          <geometry>
+
+            <box>
+              <size>0.10 6.0 0.50</size>
+            </box>
+
+          </geometry>
+
+        </collision>
+
+        <visual name="visual">
+
+          <geometry>
+
+            <box>
+              <size>0.10 6.0 0.50</size>
+            </box>
+
+          </geometry>
+
+        </visual>
+
+      </link>
+
+    </model>
+
+
+    <!-- =================================================== -->
+    <!-- 내부 장애물 1 -->
+    <!-- =================================================== -->
+
+    <model name="obstacle1">
+
+      <static>true</static>
+
+      <pose>
+        1.0 0.6 0.30 0 0 0
+      </pose>
+
+
+      <link name="box">
+
+        <collision name="collision">
+
+          <geometry>
+
+            <box>
+              <size>0.6 0.6 0.6</size>
+            </box>
+
+          </geometry>
+
+        </collision>
+
+
+        <visual name="visual">
+
+          <geometry>
+
+            <box>
+              <size>0.6 0.6 0.6</size>
+            </box>
+
+          </geometry>
+
+        </visual>
+
+      </link>
+
+    </model>
+
+
+    <!-- =================================================== -->
+    <!-- 내부 장애물 2 -->
+    <!-- =================================================== -->
+
+    <model name="obstacle2">
+
+      <static>true</static>
+
+      <pose>
+        -1.2 -0.8 0.25 0 0 0
+      </pose>
+
+
+      <link name="box">
+
+        <collision name="collision">
+
+          <geometry>
+
+            <box>
+              <size>0.8 0.35 0.5</size>
+            </box>
+
+          </geometry>
+
+        </collision>
+
+
+        <visual name="visual">
+
+          <geometry>
+
+            <box>
+              <size>0.8 0.35 0.5</size>
+            </box>
+
+          </geometry>
+
+        </visual>
+
+      </link>
+
+    </model>
+
+
+  </world>
+
+</sdf>
