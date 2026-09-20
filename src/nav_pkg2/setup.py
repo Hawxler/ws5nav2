@@ -64,6 +64,8 @@ setup(
     },
     entry_points={
         'console_scripts': [
+            'nav_go1 = nav_pkg2.nav_go1:main',
+            'nav_way1 = nav_pkg2.nav_way1:main',
         ],
     },
 )
